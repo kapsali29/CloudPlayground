@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ua"
+version = "0.1.0"
+description = ""
+authors = ["kapsali29 <kapsali29@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.111.0"
+uvicorn = "^0.30.1"
+kubernetes = "^30.1.0"
+pymongo = "^4.7.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  nodeserver:
+    container_name: nodeserver
+    hostname: nodeserver
+    restart: always
+    image: pkapsalismartel/hello-node:v0.1
+    ports:
+      - "5000:5000"
+  nginx:
+    build:
+      context: "../../.."
+      dockerfile: nginx/Dockerfile
+    container_name: nginx
+    hostname: nginx
+    depends_on:
+      - nodeserver
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    ports:
+      - '8080:80'

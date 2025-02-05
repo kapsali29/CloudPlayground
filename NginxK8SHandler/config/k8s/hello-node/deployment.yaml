@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeserver
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+  selector:
+    app: nodeserver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeserver
+  template:
+    metadata:
+      labels:
+        app: nodeserver
+    spec:
+      containers:
+        - name: nodeserver
+          image: pkapsalismartel/hello-node:v0.1
+          ports:
+            - containerPort: 5000
