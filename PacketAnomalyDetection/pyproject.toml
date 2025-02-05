@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "packetanomalydetection"
+version = "0.1.0"
+description = ""
+authors = ["Panagiotis Kapsalis <kapsali29@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+scapy = "^2.5.0"
+pyshark = "^0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
